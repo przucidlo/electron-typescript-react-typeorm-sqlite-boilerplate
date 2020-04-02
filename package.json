@@ -1,0 +1,53 @@
+{
+    "name": "electron-typescript-typeorm-sqlite-boiletplate",
+    "main": "./.webpack/main/bundle.js",
+    "version": "0.1.0",
+    "description": "A boilerplate for creating projects that want to use typeorm with sqlite3 inside electron.",
+    "private": true,
+    "scripts": {
+        "postinstall": "electron-builder install-app-deps",
+        "build": "webpack --config webpack.config.dev.js",
+        "package": "npm run build && electron-builder --dir .",
+        "start": "concurrently \"npm run start:dev\" \"npm run start:electron\"",
+        "start:dev": "webpack-dev-server --config webpack.config.dev.js",
+        "start:electron": "npm run build && electron ./.webpack/main/bundle.js"
+    },
+    "author": "Abbl (Patryk Rzucidło)",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-hot-loader": "^4.12.20",
+        "reflect-metadata": "^0.1.13",
+        "sqlite3": "^4.1.1",
+        "typeorm": "^0.2.24",
+        "@hot-loader/react-dom": "^16.13.0"
+    },
+    "devDependencies": {
+        "electron-builder": "^22.4.1",
+        "@types/node": "^13.9.8",
+        "@babel/core": "^7.9.0",
+        "@babel/plugin-proposal-decorators": "^7.8.3",
+        "@babel/preset-react": "^7.9.4",
+        "@babel/preset-typescript": "^7.9.0",
+        "@types/html-webpack-plugin": "^3.2.2",
+        "@types/react": "^16.9.31",
+        "@types/react-dom": "^16.9.6",
+        "babel-loader": "^8.1.0",
+        "concurrently": "^5.1.0",
+        "css-loader": "^3.4.2",
+        "electron": "^8.2.0",
+        "file-loader": "^6.0.0",
+        "html-webpack-plugin": "^4.0.4",
+        "prettier": "^2.0.2",
+        "sass-loader": "^8.0.2",
+        "source-map-loader": "^0.2.4",
+        "style-loader": "^1.1.3",
+        "ts-loader": "^6.2.2",
+        "typescript": "^3.8.3",
+        "url-loader": "^4.0.0",
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11",
+        "webpack-dev-server": "^3.10.3"
+    }
+}
