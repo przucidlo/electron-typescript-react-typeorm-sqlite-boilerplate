@@ -10,7 +10,7 @@
 -   Webpack
 -   Babel
 
-#### This stack comes with few limitations due to bug(?) in webpack which causes usage of TypeORM on renderer process to be almost impossible.(typeorm/typeorm#4210)
+#### This stack comes with few limitations due to bug(?) in webpack which causes usage of TypeORM on renderer process to be almost impossible.([#4210](https://github.com/typeorm/typeorm/issues/4210))
 
 ---
 
@@ -48,8 +48,9 @@ Bundles your app using development config.
     npm run package
 
 Packages your app using electron-builder (config can be found in ./electron-builder.json)
-  
- npm run start:dev
+
+    npm run start:dev
+
 Starts webpack-dev-server.
 
     npm run start:electron
@@ -58,17 +59,17 @@ Starts electron instance in development mode.
 
 # Troubleshooting
 
-> -   Webpack-dev-server doesn't notice any change I make to code.
+> -   Webpack-dev-server doesn't notice any changes I make to code.
 > -   React-hot-loader doesn't work.
 
 Make sure that you have enough
 [watchers](https://webpack.js.org/configuration/watch/#not-enough-watchers).
 
-> -   Webpack warns about not being able to find database drivers (beside SQLite3) in console.
+> -   Webpack warns about not being able to find database drivers in console.
 
 TypeORM has conditional dependencies on other databases (mysql, mssql...) and webpack has no idea which one are needed and tries to load all of them and warnings pop out.
 
 # TODO
 
--   Improve the example usage code.
+-   Improve the sample code.
 -   Setup tests.
