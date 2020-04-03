@@ -4,7 +4,6 @@ declare global {
     namespace NodeJS {
         interface Global {
             database: Database;
-            test: any;
         }
     }
 }
