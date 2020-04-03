@@ -6,11 +6,12 @@
     "private": true,
     "scripts": {
         "postinstall": "electron-builder install-app-deps",
-        "build": "webpack --config webpack.config.dev.js",
+        "build": "webpack --config webpack.config.prod.js",
+        "build:dev": "webpack --config webpack.config.dev.js",
         "package": "npm run build && electron-builder --dir .",
         "start": "concurrently \"npm run start:dev\" \"npm run start:electron\"",
         "start:dev": "webpack-dev-server --config webpack.config.dev.js",
-        "start:electron": "npm run build && electron ./.webpack/main/bundle.js"
+        "start:electron": "npm run build:dev && electron ./.webpack/main/bundle.js"
     },
     "author": "Abbl (Patryk Rzucidło)",
     "license": "ISC",
