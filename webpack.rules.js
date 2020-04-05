@@ -5,17 +5,14 @@ module.exports = rules = [
         use: ['style-loader', 'css-loader', 'sass-loader'],
     },
     {
-        test: /\.(svg|ico|icns)$/,
-        loader: 'file-loader',
-        options: {
-            name: '[path][name].[ext]',
-        },
-    },
-    {
         test: /\.(jpg|png|woff|woff2|eot|ttf)$/,
-        loader: 'url-loader',
-        options: {
-            name: '[path][name].[ext]',
-        },
+        use: [
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: 8192, // in bytes
+                },
+            },
+        ],
     },
 ];
