@@ -20,7 +20,7 @@ The main idea of this stack is to use TypeORM on main process and communicate wi
 
 | OS      | Status             |
 | ------- | ------------------ |
-| Windows | Yet untested.      |
+| Windows | ✔️      |
 | Linux   | :heavy_check_mark: |
 | Mac     | :heavy_check_mark: |
 
